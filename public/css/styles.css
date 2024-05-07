@@ -117,6 +117,10 @@ header {
     border-bottom-right-radius: 10px;
 }
 
+#cards-container.row>* {
+    padding: 0;
+}
+
 .card .card-date {
     font-size: 12px;
     color: #ccc;

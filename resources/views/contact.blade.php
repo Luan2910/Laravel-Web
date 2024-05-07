@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'My Laravel Site')
+@section('title', 'Schedule.ev')
 
 @section('content')
 
