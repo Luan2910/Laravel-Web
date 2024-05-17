@@ -48,6 +48,8 @@ class EventController extends Controller
             $requestImage->move(public_path('img/events'), $imageName);
             $event->image = $imageName;
 
+        }else{
+            $event->image = "events_placeholder.jpg";
         }
 
         $user = auth()->user();
@@ -75,5 +77,12 @@ class EventController extends Controller
         $events = $user->events;
 
         return view('events.dashboard', ['events' => $events]);
+    }
+
+    public function destroy($id) {
+        
+        Event::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Evento Excluído com sucesso!');
     }
 }
